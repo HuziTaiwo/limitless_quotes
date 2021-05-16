@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+#showcase {
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url(/img/mindset_cover.jpg);
+  background-size: cover;
+  background-position: center;
+  color: rgb(201, 201, 201);
+}
+
+header {
+  border-bottom: 1px solid rgba(201, 201, 201);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px 5px;
+}
+
+.logo {
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  list-style-type: none;
+  padding: 0 10px;
+}
+
+.nav-links li a {
+  color: rgb(230, 228, 228);
+  text-decoration: none;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: rgb(160, 160, 160);
+}
+
+.menu {
+  display: none;
+}
+
+main {
+  padding: 50px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+  color: rgb(221, 220, 220);
+  text-align: justify;
+}
+
+p {
+  line-height: 1.7;
+}
+
+h2 {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+h3,
+h4 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+a {
+  color: rgb(221, 220, 220);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.brain,
+.neuro {
+  background: #031931;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.neuro {
+  margin: 40px 0 0;
+}
+
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #031931;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.inactive {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wrap > div {
+  position: relative;
+  width: 50%;
+  min-width: 300px;
+  background: #031931;
+  border: 2px solid teal;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.wrap h4 {
+  border-bottom: 2px solid teal;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.wrap p {
+  padding: 10px 20px;
+}
+
+.close {
+  padding: 5px 0;
+  border-top: 1px solid teal;
+  width: 100%;
+}
+
+.wrap .fa-times,
+.ok {
+  font-size: 25px;
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  color: teal;
+  cursor: pointer;
+}
+
+@media (max-width: 730px) {
+  header {
+    display: block;
+    border-bottom: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .nav-links li {
+    padding: 0;
+  }
+
+  .nav-links li a {
+    padding: 10px;
+    border-bottom: 1px solid rgba(201, 201, 201);
+    display: block;
+    margin: 0;
+  }
+}
+
+@media (max-width: 478px) {
+  #showcase {
+    height: 100vh;
+  }
+  main {
+    padding: 50px 20px;
+  }
+
+  .menu {
+    display: flex;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    color: rgba(201, 201, 201);
+    padding: 2px 15px;
+    justify-content: flex-end;
+  }
+
+  .menu button {
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: rgba(201, 201, 201);
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .nav-links li {
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .nav-links li.active {
+    height: auto;
+    overflow: auto;
+  }
+}

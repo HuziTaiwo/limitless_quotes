@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+#showcase {
+  height: 80vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/mindset_cover.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* filter: blur(1px); */
+}
+
+header {
+  background-color: none;
+  color: white;
+  padding: 15px 0;
+  /* height: 100px; */
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  border-bottom: 1px solid white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  text-align: center;
+  padding: 15px 0 25px 0;
+}
+
+.fa-arrow-down {
+  display: none;
+  opacity: 0;
+}
+
+.fa-arrow-up {
+  display: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.nav-links a {
+  color: white;
+}
+
+.nav-links a:hover {
+  color: rgb(228, 228, 228);
+}
+
+.bar {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  height: 40vh;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 11;
+}
+
+.bar .icon {
+  display: block;
+  background: white;
+  padding: 5px 9px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 50%;
+  line-height: 1.8;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(122, 122, 122, 0.5);
+}
+
+.bar .icon i {
+  font-size: 30px;
+  color: #111;
+}
+
+.bar .info-icon {
+  transform: translateY(30px);
+}
+
+.bar-btn {
+  display: none;
+}
+
+/* main { */
+/* margin: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; */
+/* grid-column-gap: 50px; */
+/* grid-gap: 50px;
+} */
+
+.article-active {
+  opacity: 1;
+  transform: translateY(0px);
+  animation: wiggle 0.5s ease forwards;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    display: block;
+  }
+}
+
+@media (max-width: 670px) {
+  header {
+    border: none;
+  }
+
+  .fa-arrow-down {
+    display: block;
+    opacity: 1;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .fa-arrow-down:hover,
+  .fa-arrow-up:hover {
+    color: rgb(228, 228, 228);
+  }
+
+  .nav-links {
+    display: block;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navActive {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0%);
+  }
+
+  .nav-links li {
+    padding: 15px 0 2px 0;
+    border-bottom: 1px solid white;
+  }
+
+  .bar .icon {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .bar {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+
+  .bar img {
+    opacity: 0;
+  }
+
+  .bar .info-icon {
+    transform: translateY(30px);
+  }
+
+  div.bar-active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .bar-btn {
+    display: block;
+    background: white;
+    padding: 10px 13px;
+    border: none;
+    border-radius: 50%;
+    line-height: 1.8;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    position: fixed;
+    bottom: 20%;
+    right: 10px;
+    box-shadow: 0px 4px 8px rgba(122, 122, 122, 0.5);
+    z-index: 10;
+  }
+
+  .bar-btn i {
+    font-size: 30px;
+  }
+
+  article {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 70%;
+    min-width: 300px;
+    /* max-width: 350px; */
+    margin: 20px auto;
+    box-shadow: 6px 6px 6px rgba(122, 122, 122, 0.5);
+    border: none;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+}
